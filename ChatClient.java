@@ -32,7 +32,6 @@ public class ChatClient extends JFrame {
 
     
     //@SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new JPanel();
@@ -95,29 +94,27 @@ public class ChatClient extends JFrame {
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 508, GroupLayout.PREFERRED_SIZE)
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 508, GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 419, GroupLayout.PREFERRED_SIZE)
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 419, GroupLayout.PREFERRED_SIZE)
         );
 
         setSize(new Dimension(508, 441));
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jTextField1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(ActionEvent evt) {
 
         sendMessage(jTextField1.getText());
 	jTextField1.setText("");
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }
 
-    private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(ActionEvent evt) {
 
        sendMessage(jTextField1.getText());
 	jTextField1.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
     
     public void startRunning()
@@ -154,7 +151,7 @@ public class ChatClient extends JFrame {
               try
               {
                       message = (String) in.readObject();
-                      chatArea.append("\n"+message);
+                      chatArea.append("\n" + message);
               }
               catch(ClassNotFoundException classNotFoundException)
               {
@@ -179,7 +176,7 @@ public class ChatClient extends JFrame {
     }
   
     
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration
     private JTextArea chatArea;
     private JButton jButton1;
     private JLabel jLabel1;
@@ -188,5 +185,5 @@ public class ChatClient extends JFrame {
     private JScrollPane jScrollPane1;
     private JTextField jTextField1;
     private JLabel jlStatus;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration
 }

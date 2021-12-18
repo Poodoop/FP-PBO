@@ -1,4 +1,4 @@
-package chatApps;
+package ChatApps;
 
 import java.io.*;
 import java.net.*;
@@ -91,7 +91,7 @@ public class ChatServer extends JFrame{
      setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
      setForeground(new Color(102, 255, 204));
 
-     jPanel1.setBackground(new Color(204, 204, 255));
+     jPanel1.setBackground(new Color(154, 205, 49));
      jPanel1.setLayout(null);
 
      chatArea.setColumns(20);
@@ -109,7 +109,7 @@ public class ChatServer extends JFrame{
      jPanel1.add(jTextField1);
      jTextField1.setBounds(10, 350, 400, 40);
 
-     jButton1.setBackground(new Color(102, 102, 255));
+     jButton1.setBackground(new Color(216, 191, 216));
      jButton1.setFont(new Font("Arial Black", 1, 12));
      jButton1.setText("Send");
      jButton1.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
@@ -171,8 +171,8 @@ public class ChatServer extends JFrame{
         try
         {
             
-            chatArea.append("\nME(Server) - "+ message);            
-            out.writeObject("                                                  " + message);
+            chatArea.append("\nME : "+ message);            
+            out.writeObject("(server) : " + message);
             out.flush();
         }
         catch(IOException ioException)

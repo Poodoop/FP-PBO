@@ -1,4 +1,4 @@
-package ChatApps;
+package chatApps;
 
 import java.io.*;
 import java.net.*;
@@ -9,12 +9,10 @@ import javax.swing.*;
 
 public class ChatClient extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	private ObjectOutputStream out;
-    private ObjectInputStream in;
+    
+	private ObjectInputStream in;
+    private ObjectOutputStream out;
     private String message="";
     private String serverIP;
     private Socket connection;

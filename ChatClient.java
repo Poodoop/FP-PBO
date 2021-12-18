@@ -28,8 +28,6 @@ public class ChatClient extends JFrame {
         serverIP = s;
     }
 
-    
-    //@SuppressWarnings("unchecked")
     private void initComponents() {
 
         jPanel1 = new JPanel();
@@ -76,7 +74,7 @@ public class ChatClient extends JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(10, 80, 490, 280);
 
-        jLabel2.setFont(new Font("Myriad Pro", 1, 48)); // NOI18N
+        jLabel2.setFont(new Font("Myriad Pro", 1, 48)); 
         jLabel2.setForeground(new Color(255, 255, 255));
         jLabel2.setText("Client");
         jPanel1.add(jLabel2);
@@ -172,9 +170,6 @@ public class ChatClient extends JFrame {
             chatArea.append("\n Unable to Send Message");
         }
     }
-  
-    
-    // Variables declaration
     private JTextArea chatArea;
     private JButton jButton1;
     private JLabel jLabel1;
@@ -183,5 +178,4 @@ public class ChatClient extends JFrame {
     private JScrollPane jScrollPane1;
     private JTextField jTextField1;
     private JLabel jlStatus;
-    // End of variables declaration
 }

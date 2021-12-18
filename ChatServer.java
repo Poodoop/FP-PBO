@@ -1,12 +1,10 @@
-package ChatApps;
+package chatApps;
 
 import java.io.*;
 import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.EtchedBorder;
 
 public class ChatServer extends JFrame{
 	
@@ -180,7 +178,7 @@ public class ChatServer extends JFrame{
             chatArea.append("\n Unable to Send Message");
         }
     }
-	private JTextArea chatArea;
+    private JTextArea chatArea;
     private JButton jButton1;
     private JLabel jLabel1;
     private JLabel jLabel2;

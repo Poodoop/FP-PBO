@@ -9,10 +9,8 @@ import javax.swing.*;
 
 public class ChatClient extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	private ObjectOutputStream out;
     private ObjectInputStream in;
     private String message="";

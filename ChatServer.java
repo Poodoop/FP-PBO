@@ -1,23 +1,25 @@
-package chat;
+package chatApps;
 
 import java.io.*;
 import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EtchedBorder;
 
-public class Chat_server extends JFrame{
+public class ChatServer extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	
     private ObjectInputStream in; 
     private ObjectOutputStream out; 
-    private Socket socket; 
+    private Socket connection; 
     private ServerSocket server;
     private int clients = 100;
-    private int port = 011;
+    private int port = 1011;
     
- public Chat_server() {
+ public ChatServer() {
         
         initComponents();
         this.setTitle("Server");
@@ -35,18 +37,19 @@ public class Chat_server extends JFrame{
              try
              {
                  jlStatus.setText(" Waiting for Someone to Connect...");
-                 socket = server.accept();
-                 jlStatus.setText(" Now Connected to "+socket.getInetAddress().getHostName());
+                 connection = server.accept();
+                 jlStatus.setText(" Now Connected to "+connection.getInetAddress().getHostName());
 
 
-                 out = new ObjectOutputStream(socket.getOutputStream());
+                 out = new ObjectOutputStream(connection.getOutputStream());
                  out.flush();
-                 in = new ObjectInputStream(socket.getInputStream());
+                 in = new ObjectInputStream(connection.getInputStream());
 
                  whileChatting();
 
              }catch(EOFException eofException)
              {
+		     
              }
          }
      }
@@ -139,7 +142,7 @@ public class Chat_server extends JFrame{
      getContentPane().setLayout(layout);
      layout.setHorizontalGroup(
          layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-         .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 500, .GroupLayout.PREFERRED_SIZE)
+         .addComponent(jPanel1, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 500, GroupLayout.PREFERRED_SIZE)
      );
      layout.setVerticalGroup(
          layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -151,8 +154,14 @@ public class Chat_server extends JFrame{
      setSize(new Dimension(500, 427));
      setLocationRelativeTo(null);
  }
+ 
  private void jButton1ActionPerformed(ActionEvent evt) {
      
+     sendMessage(jTextField1.getText());
+	jTextField1.setText("");
+ }
+ private void jTextField1ActionPerformed(ActionEvent evt) {
+	 
      sendMessage(jTextField1.getText());
 	jTextField1.setText("");
  }
@@ -179,6 +188,4 @@ public class Chat_server extends JFrame{
     private JScrollPane jScrollPane1;
     private JTextField jTextField1;
     private JLabel jlStatus;	
- 
- 
 }

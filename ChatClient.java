@@ -1,4 +1,4 @@
-package chatApps;
+package ChatApps;
 
 import java.io.*;
 import java.net.*;
@@ -9,10 +9,12 @@ import javax.swing.*;
 
 public class ChatClient extends JFrame {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-    
-	private ObjectInputStream in;
-    private ObjectOutputStream out;
+	private ObjectOutputStream out;
+    private ObjectInputStream in;
     private String message="";
     private String serverIP;
     private Socket connection;
@@ -28,6 +30,8 @@ public class ChatClient extends JFrame {
         serverIP = s;
     }
 
+    
+    //@SuppressWarnings("unchecked")
     private void initComponents() {
 
         jPanel1 = new JPanel();
@@ -42,7 +46,7 @@ public class ChatClient extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new Color(0, 0, 51));
+        jPanel1.setBackground(new Color(70, 130, 180));
         jPanel1.setForeground(new Color(204, 204, 204));
         jPanel1.setLayout(null);
 
@@ -56,7 +60,7 @@ public class ChatClient extends JFrame {
         jPanel1.add(jTextField1);
         jTextField1.setBounds(10, 370, 410, 40);
 
-        jButton1.setBackground(new Color(204, 204, 255));
+        jButton1.setBackground(new Color(216, 191, 216));
         jButton1.setFont(new Font("Tahoma", 1, 11));
         jButton1.setText("Send");
         jButton1.addActionListener(new ActionListener() {
@@ -74,7 +78,7 @@ public class ChatClient extends JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(10, 80, 490, 280);
 
-        jLabel2.setFont(new Font("Myriad Pro", 1, 48)); 
+        jLabel2.setFont(new Font("Myriad Pro", 1, 48)); // NOI18N
         jLabel2.setForeground(new Color(255, 255, 255));
         jLabel2.setText("Client");
         jPanel1.add(jLabel2);
@@ -161,8 +165,8 @@ public class ChatClient extends JFrame {
         try
         {
             
-            chatArea.append("\nME(Client) - " + message);
-            out.writeObject(                                                               message);
+            chatArea.append("\nME : " + message);
+            out.writeObject("(client) : " + message);
             out.flush();
         }
         catch(IOException ioException)
@@ -170,6 +174,9 @@ public class ChatClient extends JFrame {
             chatArea.append("\n Unable to Send Message");
         }
     }
+  
+    
+    // Variables declaration
     private JTextArea chatArea;
     private JButton jButton1;
     private JLabel jLabel1;
@@ -178,4 +185,5 @@ public class ChatClient extends JFrame {
     private JScrollPane jScrollPane1;
     private JTextField jTextField1;
     private JLabel jlStatus;
+    // End of variables declaration
 }
